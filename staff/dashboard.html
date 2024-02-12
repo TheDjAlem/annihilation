@@ -9,6 +9,16 @@
     <h1>Welcome to the Dashboard!</h1>
     <!-- Add dashboard content here -->
     <button onclick="logout()">Logout</button> <!-- Logout button -->
-    <script src="logout.js"></script> <!-- Include logout functionality -->
+    <script src="/staff/logout.js"></script> <!-- Include logout functionality -->
+
+    <script>
+        // Firebase authentication check
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (!user) {
+                // User is not logged in, redirect to login page
+                window.location.href = "/staff/index.html";
+            }
+        });
+    </script>
 </body>
 </html>
