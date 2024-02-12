@@ -10,7 +10,12 @@ function login() {
             window.location.href = "dashboard.html"; // Redirect to dashboard page
         })
         .catch((error) => {
+            const errorCode = error.code;
             const errorMessage = error.message;
-            document.getElementById("error-message").innerText = errorMessage;
+            if (errorCode === 'auth/user-not-found' || errorCode === 'auth/wrong-password') {
+                document.getElementById("error-message").innerText = "Invalid email or password.";
+            } else {
+                document.getElementById("error-message").innerText = errorMessage;
+            }
         });
 }
