@@ -7,7 +7,7 @@ function login() {
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            window.location.href = "dashboard.html"; // Redirect to dashboard page
+            window.location.href = "/staff/dashboard.html"; // Redirect to dashboard page within the /staff/ folder
         })
         .catch((error) => {
             const errorCode = error.code;
