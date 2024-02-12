@@ -14,10 +14,24 @@
         <button onclick="login()">Login</button>
         <p id="error-message"></p>
     </div>
-    <!-- Add Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth.js"></script>
-    <script src="firebase-config.js"></script> <!-- Include Firebase configuration -->
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-analytics.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyD7OYbJpy2FLUOpGJ690-P-NKaMMri2W0E",
+            authDomain: "annihilation-private.firebaseapp.com",
+            projectId: "annihilation-private",
+            storageBucket: "annihilation-private.appspot.com",
+            messagingSenderId: "905841133577",
+            appId: "1:905841133577:web:6b0746622ae13e488450d8",
+            measurementId: "G-SKXFNL1Y8K"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
