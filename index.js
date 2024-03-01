@@ -1,5 +1,5 @@
 function updateCountdown() {
-    const targetDate = new Date('March 2 2024, 12:00:00').getTime();
+    const targetDate = new Date('March 2 2024 17:00:00 UTC').getTime(); // Adjusted to 12:00 pm EST
     const currentDate = new Date().getTime();
     const timeDifference = targetDate - currentDate;
 
@@ -9,7 +9,6 @@ function updateCountdown() {
     const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
     if (timeDifference < 0) {
-        // This is here to prevent the countdown from going negative Alem :)
         document.getElementById('days').innerText = '00';
         document.getElementById('hours').innerText = '00';
         document.getElementById('minutes').innerText = '00';
